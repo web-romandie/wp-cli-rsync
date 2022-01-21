@@ -58,7 +58,8 @@ WP_CLI::add_command(
             );
 
             // Transfer all uploaded files
-            WP_CLI::log('- Transfering uploads folder.');
+            WP_CLI::log('');
+            WP_CLI::log('Transfering folder "uploads"...');
             passthru($cmd);
 
             WP_CLI::success("Sync complete.");
