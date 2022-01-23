@@ -43,7 +43,7 @@ WP_CLI::add_command(
                 ? Spyc::YAMLLoad($localYamlFile)
                 : [];
 
-            $cmd = sprintf(
+            $command = sprintf(
                 'rsync -avz  -e "ssh -p %s" %s@%s:%s/%s%s %s%s',
                 empty($sshUrlParts['port']) ? 21 : $sshUrlParts['port'],
                 $sshUrlParts['user'],
@@ -58,7 +58,7 @@ WP_CLI::add_command(
             // Transfer all uploaded files
             WP_CLI::log('');
             WP_CLI::log('Transfering folder "uploads"...');
-            passthru($cmd);
+            passthru($command);
 
             WP_CLI::success("Sync complete.");
         } catch (Exception $error) {
