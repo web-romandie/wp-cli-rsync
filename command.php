@@ -45,7 +45,7 @@ WP_CLI::add_command(
 
             $command = sprintf(
                 'rsync -avz  -e "ssh -p %s" %s@%s:%s/%s%s %s%s',
-                empty($sshUrlParts['port']) ? 21 : $sshUrlParts['port'],
+                empty($sshUrlParts['port']) ? 22 : $sshUrlParts['port'],
                 $sshUrlParts['user'],
                 $sshUrlParts['host'],
                 $sshUrlParts['path'],
