@@ -33,9 +33,9 @@ WP_CLI::add_command(
 
             // do some url parsing
             $sshUrl = rtrim($aliases[$env]['ssh'], '/');
-            $sshUrlParts = parse_url($sshUrl);
+            $sshUrlParts = \WP_CLI\Utils\parse_url($sshUrl);
             $uploads = wp_upload_dir();
-            $uploadUrlParts = parse_url($uploads['baseurl']);
+            $uploadUrlParts = \WP_CLI\Utils\parse_url($uploads['baseurl']);
 
             // Get the chance to find a document root config
             $localYamlFile = 'wp-cli.yml';
