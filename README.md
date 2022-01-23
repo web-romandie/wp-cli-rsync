@@ -22,7 +22,10 @@ First add theses line in composer.json.
 Then, we can install the plugin:
 
 ```shell
-composer install wr/wp-cli-rsync dev-master 
+composer require wr/wp-cli-rsync
+
+# We can also fetch the "master" version. 
+composer require wr/wp-cli-rsync dev-master 
 ```
 
 Alternatively it can be installed globally with `wp package`
