@@ -15,13 +15,11 @@ WP_CLI::add_command(
     'rsync',
     function ($args, $assoc_args) {
         try {
-            $env = WP_CLI\Utils\get_flag_value($assoc_args, 'env');
-
-            if (empty($env)) {
-                WP_CLI::error('Please provide an environment. Like --env=staging or --env=production.');
+            if (empty($args[0])) {
+                WP_CLI::error('Please provide an environment. Example: wp rsync prod');
             }
 
-            $env = '@' . $env;
+            $env = '@' . $args[0];
 
             $aliases = WP_CLI::get_configurator()->get_aliases();
 
