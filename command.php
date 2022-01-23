@@ -27,8 +27,8 @@ WP_CLI::add_command(
                 WP_CLI::error("Environment $env doesn't seem present in your WP-CLI config.");
             }
 
-            if (!isset($aliases[$env]['ssh']) && !isset($aliases[$env]['path'])) {
-                WP_CLI::error("The $env environment doesn't have a 'ssh' of 'path' setting in your WP-CLI config.");
+            if (!isset($aliases[$env]['ssh'])) {
+                WP_CLI::error("The $env environment doesn't have a 'ssh' setting in your WP-CLI config.");
             }
 
             // do some url parsing
